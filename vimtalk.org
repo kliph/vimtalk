@@ -1,0 +1,155 @@
+* Questions about vim
+AKA I don't know how to do it ∴ it's crap
+* Is there a way to see the commands I'm building?
+e.g. if i want to do a =d2w= can I see that as I type?  I'm very
+scatterbrained.  Especially while I'm learning vim, it's hard for me
+to remember or recognize that I typed a =d= when I really meant =x=.
+
+Yep.  It's set up like that in the buffet dotfiles.
+* WTF is p doing?
+I just typed p (defaulting to emacs navigation -- I can't quit you)
+and it inserted =t= at my cursor location (?!)
+
+It's pasting!
+* Is there a way to ask vim to display the help for a button/command/etc?
+Buttons and commands work the same.  Type =:h [command or button]= in
+=NORMAL= mode.
+* One bad behavior I've picked up from emacs is spell checking my typos
+Rather than correcting typos by hand, I have emacs spellcheck the word
+that the cursor is currently in.  Is there any way to achieve a
+similar result in vim?
+
+typo
+
+=Spell check local=?
+hyay
+* Any other way of doing ESC?
+It's waaaay up there...
+
+=C-c=.
+* Are there quirks to the position of the cursor?
+Sometimes it feels like the cursor should intuitively be positioned
+after a character to get the behavior I want, but vim wants it on the
+character.  Are there any gotchas to this?
+
+Switch cursor on =VISUAL=
+* Commenting and uncommenting lines and blocks?
+From
+[[http://stackoverflow.com/questions/1676632/whats-a-quick-way-to-comment-uncomment-lines-in-vim]]
+
+A solution to uncomment: Put your cursor on the first =#= character,
+press =C-V=, go down until the last commented line and press =x= to
+delete all the =#= characters vertically.
+
+To comment: Go to first line, =C-V= and select until last line, press
+=I # C-c=.
+
+block select and =gc= or =\\= NERDCommenter?
+* What are the typical ways to navigate to files in rails projects?
+
+=:R= inteliigently navigates
+
+Docs for vim-rails.  [[https://github.com/tpope/vim-rails]]
+* Multiple buffers / windows
+How about typical ways to open multiple buffers/windows and navigate
+those?
+
+Search and change window to =C-I= =C-O= kind of like =C-x C-x=
+* Align text (indentation)
+e.g.:
+#+BEGIN_SRC ruby
+  group :production do
+    gem 'pg', '0.17.1'
+    gem 'rails_12factor', '0.0.2'
+  end
+
+#+END_SRC
+
+Use the =equals= key.
+
+=:=g=
+* Align text (on regexp)
+Something like this:
+
+#+BEGIN_SRC ruby
+  source 'https://rubygems.org'
+
+  gem 'rails',                   '4.2.0'
+  gem 'bcrypt',                  '3.1.7'
+  gem 'faker',                   '1.4.2'
+  gem 'carrierwave',             '0.10.0'
+  gem 'mini_magick',             '3.8.0'
+  gem 'fog',                     '1.23.0'
+  gem 'will_paginate',           '3.0.7'
+  gem 'bootstrap-will_paginate', '0.0.10'
+  #                              ^------- I want to align on this
+  #                              character
+
+#+END_SRC
+* Wrap long lines?
+
+:set wrap
+:set wrap!
+:set nowrap
+* Recenter the screen like C-l
+[[http://unix.stackexchange.com/a/108624]]
+
+=zz= and associates.
+* Force tool tips?
+I saw some helpful tool tips showing provenance for things like
+cookies and sessions.  But it doesn't seem like they're showing up
+now.... Can I force them to show up?
+
+
+vim Omnicomplete?
+* Tab completion in ruby files?
+use C-p in insert mode
+
+Rebind to tab?
+
+Also:
+fuzzy finder
+
+Use =C-t= to open in a new tab from the fuzzy finder.
+
+* View split
+VS splits horizontally
+
+split splits vertically
+
+=C-w x= swaps windows
+
+=C-w hjkl= to navigate
+* Ggrep to grep in git project
+Part of fugitive.  =:copen= and =:cclose= for the quickwindow to show
+results.
+* Yank from kill ring
+Use a letter buffer as a prefix to the =yank= or =paste= command.  The
+command looks like this: =:"ac= to keep the copied stuff in a buffer
+marked with "a".
+
+Turn off vim using system clipboard? NO!
+* Silver Searcher Ag
+Magnets how do they work?
+
+How do I install it?
+
+* Buffer Explorer
+Leader key =be=
+
+[[https://github.com/jlanzarotta/bufexplorer]]
+
+[[https://github.com/gmarik/Vundle.vim]]
+
+* Redo
+=C-r=
+* Select within delimiters
+=vi[delimiter]=
+=ai[delimiter]= include delimiters
+=ci[delimiter]= clear it
+* J
+=J= joins the line with the next line.
+* Insert at end of line
+=A=
+* Insert at beginning of line
+=I=
