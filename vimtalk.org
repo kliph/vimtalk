@@ -23,10 +23,16 @@ typo
 
 =Spell check local=?
 hyay
+
+First, =spelllang= must be set (it defaults to =en=), then =:set spell= (or =:set spell!= to toggle).
+To turn spellchecking on by default for certain filetypes, use in your =.vimrc.local= (for example):
+
+=au FileType markdown setlocal spell spelllang=en_us=
+
 * Any other way of doing ESC?
 It's waaaay up there...
 
-=C-c=.
+=C-c= or =C-[= (they have subtlely different behaviors though)
 * Are there quirks to the position of the cursor?
 Sometimes it feels like the cursor should intuitively be positioned
 after a character to get the behavior I want, but vim wants it on the
