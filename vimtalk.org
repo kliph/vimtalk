@@ -140,6 +140,8 @@ Magnets how do they work?
 
 How do I install it?
 
+Vundle is your friend.  Don't forget to do =:VundleInstall=
+
 * Buffer Explorer
 Leader key =be=
 
