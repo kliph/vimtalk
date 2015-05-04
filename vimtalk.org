@@ -32,7 +32,7 @@ To turn spellchecking on by default for certain filetypes, use in your =.vimrc.l
 * Any other way of doing ESC?
 It's waaaay up there...
 
-=C-c= or =C-[= (they have subtlely different behaviors though)
+=C-c= or =C-[= (they have subtly different behaviors though)
 * Are there quirks to the position of the cursor?
 Sometimes it feels like the cursor should intuitively be positioned
 after a character to get the behavior I want, but vim wants it on the
